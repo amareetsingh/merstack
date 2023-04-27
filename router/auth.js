@@ -92,7 +92,7 @@ router.post("/signin", async (req, res) => {
 router.get("/about", CheckPack, (req, res) => {
   res.send(req.PackUserFind);
 });
-router.get("/getUser", Auth, (req, res) => {
+router.get("/getUser", (req, res) => {
   res.send(req.rootUser);
 });
 
@@ -101,7 +101,7 @@ router.get("/logout", (req, res) => {
   res.status(200).send("user logout");
 });
 
-router.get("/packages", Auth, async (req, res) => {
+router.get("/packages", async (req, res) => {
   try {
     const response = await package.find();
     res.send(response);
