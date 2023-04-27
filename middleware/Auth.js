@@ -3,7 +3,6 @@ const User = require('../modal/useSchema');
 
 const Auth = async (req, res, next) =>{
     try{
-        const { authorization } = req.headers;
         const token= req.cookies.jwtoken;
 
         const verifyToken = jwt.verify(token, process.env.SECRET_KEY);
