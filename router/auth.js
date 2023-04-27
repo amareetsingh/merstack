@@ -89,7 +89,7 @@ router.post("/signin", async (req, res) => {
   }
 });
 
-router.get("/about", CheckPack, (req, res) => {
+router.get("/about",(req, res) => {
   res.send(req.PackUserFind);
 });
 router.get("/getUser", (req, res) => {
